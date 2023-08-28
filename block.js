@@ -17,16 +17,18 @@ class Block {
     let timestamp, hash;
     // const timestamp = Date.now();
     const lastHash = lastBlock.hash;
-    const { difficulty } = lastBlock;
+    let { difficulty } = lastBlock;
     let nonce = 0;
 
     do {
       nonce++;
       timestamp = Date.now();
+      difficulty = Block.adjustDifficulty({originalBlock: lastBlock, timestamp})
       hash = cryptoHash(timestamp, lastHash, data, nonce, difficulty);
     } while (
       hash.substring(0, difficulty) !== '0'.repeat(difficulty)
     );
+
 
     return new this({
       data,
@@ -38,8 +40,12 @@ class Block {
       // hash: cryptoHash(timestamp, lastHash, data, nonce, difficulty),
     })
   }
-  static adjustDiffuculty({ originalBlock, timestamp }) {
+  static adjustDifficulty({ originalBlock, timestamp }) {
     const { difficulty } = originalBlock;
+
+    if (originalBlock.difficulty < 1) {
+      return 1;
+    }
 
     const difference = timestamp - originalBlock.timestamp;
     
