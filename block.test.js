@@ -70,7 +70,7 @@ describe('Block', () => {
     });
   });
 
-  describe('adjustDiffuculty()', () => {
+  describe('adjustDifficulty()', () => {
     it('rises the difficulty for quickly mined block', () => {
       expect(
         Block.adjustDiffuculty({

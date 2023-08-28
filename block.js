@@ -42,9 +42,6 @@ class Block {
     const { difficulty } = originalBlock;
 
     const difference = timestamp - originalBlock.timestamp;
-    console.log('timestamp:', timestamp)
-    console.log('originalBlock.timestamp:', originalBlock.timestamp)
-    console.log('difference:', difference)
     
     if (difference > MINE_RATE) {
       return difficulty - 1;
