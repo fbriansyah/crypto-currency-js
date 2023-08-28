@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "23.6.0"
+    "jest": "23.6.0",
+    "hex-to-binary": "^1.0.1"
+  },
+  "dependencies": {
   }
 }

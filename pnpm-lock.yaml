@@ -4,10 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+
 devDependencies:
   jest:
     specifier: 23.6.0
     version: 23.6.0
+  hex-to-binary:
+    specifier: ^1.0.1
+    version: 1.0.1
 
 packages:
 
@@ -1357,6 +1362,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /hex-to-binary@1.0.1:
+    resolution: {integrity: sha512-m1ykzQs9fKfgfzXj2oV5xAWoyGaudwa0qxY4IDUOgY8J69fKY7mXdwTfQHtS3Y5kglpwM7UmyCSQFKnL87FrdQ==}
+    dev: false
 
   /home-or-tmp@2.0.0:
     resolution: {integrity: sha512-ycURW7oUxE2sNiPVw1HVEFsW+ecOpJ5zaj7eC0RlwhibhRBod20muUN8qu/gzx956YrLolVvs1MTXwKgC2rVEg==}
