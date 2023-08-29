@@ -6,17 +6,20 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "body-parser": "^1.20.2",
+    "cross-env": "5.2.0",
     "express": "4.16.3",
     "hex-to-binary": "^1.0.1",
     "jest": "23.6.0",
     "nodemon": "^3.0.1",
-    "redis": "^2.8.0"
+    "redis": "^2.8.0",
+    "request": "^2.88.2"
   }
 }
