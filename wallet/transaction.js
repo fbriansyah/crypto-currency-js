@@ -4,6 +4,7 @@ class Transaction {
   constructor({senderWallet, recipient, amount}) {
     this.id = uuid();
     this.outputMap = this.createOutputMap({senderWallet, recipient, amount});
+    this.input = this.createInput({ outputMap: this.outputMap, senderWallet });
   }
 
   createOutputMap({senderWallet, recipient, amount}) {
@@ -14,6 +15,16 @@ class Transaction {
     return outputMap;
   }
 
+
+  createInput({senderWallet, outputMap}) {
+
+    return {
+      timestamp: Date.now(),
+      amount: senderWallet.balance,
+      address: senderWallet.publicKey,
+      signature: senderWallet.sign(outputMap),
+    };
+  }
 }
 
 module.exports = Transaction;
