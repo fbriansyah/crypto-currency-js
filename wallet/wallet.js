@@ -13,7 +13,7 @@ class Wallet {
     const hashData = cryptoHash(data);
     return this.keyPair.sign(hashData);
   }
-  createTranscation({ amount, recipient }) {
+  createTransaction({ amount, recipient }) {
     if(amount > this.balance) {
       throw new Error('amount exceeds balance');
     }

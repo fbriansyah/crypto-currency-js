@@ -40,7 +40,7 @@ describe('Wallet', () => {
   describe('createTransaction()', () => {
     describe('and the amount exceeds the balance', () => {
       it('throws an error', () => {
-        expect(() => wallet.createTranscation({
+        expect(() => wallet.createTransaction({
           amount: 9999, 
           recipient: 'foo-recipient'
         })).toThrow('amount exceeds balance');
@@ -53,7 +53,7 @@ describe('Wallet', () => {
       beforeEach(() => {
         amount = 50;
         recipient = 'foo-recipient';
-        transaction = wallet.createTranscation({ amount, recipient });
+        transaction = wallet.createTransaction({ amount, recipient });
       });
 
       it('creates an instance of `Transaction`', () => {
